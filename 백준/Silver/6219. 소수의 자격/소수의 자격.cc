@@ -5,7 +5,7 @@ using namespace std;
 int main () {
     int A, B, D, cnt = 0;
     cin >> A >> B >> D;
-    vector<int> isPrime(B + 1, true);
+    vector<bool> isPrime(B + 1, true);
     isPrime[1] = false;
     for (int i = 2; i * i <= B; ++i) {
         if(!isPrime[i]) continue;
