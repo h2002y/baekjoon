@@ -4,7 +4,7 @@
 using namespace std;
 
 int B[3], K1[5], K2[5];
-int maxK1, maxK2, maxB, minB = 31;
+int maxK1, maxK2;
 vector<vector<int>> dp;
 
 int recur(int beeds1, int beeds2)
@@ -42,8 +42,6 @@ int main()
     for (int i = 0; i < 3; ++i)
     {
         cin >> B[i];
-        maxB = max(maxB, B[i]);
-        minB = min(minB, B[i]);
     }
     for (int i = 0; i < 5; ++i)
     {
