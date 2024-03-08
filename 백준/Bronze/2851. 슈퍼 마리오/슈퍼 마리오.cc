@@ -1,24 +1,23 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
-int main() {
-    vector<int> scores(10);
-    int sum = 0, tmpSum, minDiff, answer;
-    for (int i = 0; i < 10; ++i) {
-        cin >> scores[i];
-        sum += scores[i];
+int main()
+{
+    int sum = 0, minDiff = 1000, maxSum = 0;
+    int mush[10];
+    for (int i = 0; i < 10; ++i)
+    {
+        cin >> mush[i];
+        sum += mush[i];
+
+        if (minDiff == abs(sum - 100) && sum > maxSum)
+            maxSum = sum;
+        else if (minDiff >= abs(sum - 100))
+        {
+            maxSum = sum;
+            minDiff = abs(sum - 100);
+        }
     }
-    minDiff = abs(sum - 100);
-    answer = sum;
-    tmpSum = sum;
-    for(int i = 9; i >= 0; --i) {
-        tmpSum -= scores[i];
-        if(minDiff > abs(tmpSum - 100)) {
-            minDiff = abs(tmpSum - 100);
-            answer = tmpSum;
-        } else break;
-    }
-    cout << answer << "\n";
+    cout << maxSum << "\n";
     return 0;
 }
