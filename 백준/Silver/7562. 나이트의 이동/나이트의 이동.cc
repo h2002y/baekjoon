@@ -26,7 +26,7 @@ int main() {
         while(!q.empty()) {
             Coord c = q.front();
             q.pop();
-            if (visited[c.y][c.x] > 0) continue;
+            if (visited[c.y][c.x] >= 0) continue;
             visited[c.y][c.x] = c.cnt;
             for (int i = 0; i < 8; ++i) {
                 int ny = c.y + dy[i];
