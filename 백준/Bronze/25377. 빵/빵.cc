@@ -9,6 +9,7 @@ int main () {
         cin >> A >> B;
         if (A <= B && B < minT) minT = B;
     }
-    cout << minT << "\n";
+    if (minT == 1001) cout << "-1\n";
+    else cout << minT << "\n";
     return 0;
 }
